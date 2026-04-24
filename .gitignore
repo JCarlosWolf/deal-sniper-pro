@@ -3,3 +3,5 @@ __pycache__/
 .env
 data/seen_items.json
 *.pyc
+.idea/
+debug_wallapop.html
