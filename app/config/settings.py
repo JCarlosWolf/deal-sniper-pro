@@ -1,37 +1,29 @@
-# app/config/settings.py
-
-"""
-Configuración central del sistema DealSniper Pro
-"""
-
 import os
 from dotenv import load_dotenv
 
-# Cargar variables de entorno desde .env (si existe)
+# ==============================
+# 🔐 LOAD ENV VARIABLES
+# ==============================
 load_dotenv()
 
 # ==============================
-# 🔎 BÚSQUEDAS ACTIVAS
+# 🔎 SEARCH CONFIG
 # ==============================
-
 SEARCHES = [
     {
         "query": "Fender Jazz Bass",
-        "max_price": 600
+        "max_price": 600,
+        "target_price": 500
     }
 ]
 
 # ==============================
 # 📣 TELEGRAM CONFIG
 # ==============================
-
-TELEGRAM_TOKEN = "8657336891:AAFWm3-DpM53AdUaVUvYtJVJFnC3ol5KpQc"
-CHAT_ID = "1293778019"
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN", "YOUR_TELEGRAM_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID", "YOUR_CHAT_ID")
 
 # ==============================
-# ⏱ INTERVALO DE EJECUCIÓN
+# ⏱️ SYSTEM CONFIG
 # ==============================
-
-# Tiempo en segundos entre cada ciclo
-INTERVAL = int(os.getenv("INTERVAL", 60))
-
+INTERVAL = 60  # segundos entre búsquedas
