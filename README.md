@@ -4,6 +4,16 @@ Automated marketplace monitoring system that detects underpriced deals in real t
 
 ---
 
+## 💡 Why This Matters
+
+Manually browsing marketplaces to find good deals is time-consuming and inefficient.
+
+DealSniper Pro automates this process by continuously monitoring listings, filtering irrelevant results, and alerting only when a real opportunity appears.
+
+This allows users to act faster and gain an advantage in competitive marketplaces.
+
+---
+
 ## 🚀 Overview
 
 DealSniper Pro is a Python-based automation system designed to monitor online marketplaces and identify valuable opportunities based on price.
@@ -24,7 +34,7 @@ Instead of manually browsing listings, the system continuously scans new items, 
 
 ---
 
-## 📸 Example Output
+## 📸 Example Alert (Telegram)
 
 ```
 🔥 CHOLLO
@@ -108,10 +118,11 @@ python -m app.main
 
 ## 🎯 Use Cases
 
-* 🔍 Deal detection for reselling
-* 📊 Market monitoring
-* ⚡ Real-time alerts for new listings
-* 🛠️ Automation for repetitive search tasks
+* 💰 Detect underpriced products for reselling
+* ⚡ Monitor marketplaces without manual effort
+* 📊 Track new listings in real time
+* 🤖 Automate repetitive search workflows
+* 🛠️ Build custom monitoring tools for clients
 
 ---
 
