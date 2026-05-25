@@ -1,147 +1,99 @@
-# DealSniper Pro 💰
+# DealSniper Pro: Sistema Inteligente de Monitorización de Mercados y Captación de Oportunidades en Tiempo Real
 
-Automated marketplace monitoring system that detects underpriced deals in real time and sends instant alerts via Telegram.
-
----
-
-## 💡 Why This Matters
-
-Manually browsing marketplaces to find good deals is time-consuming and inefficient.
-
-DealSniper Pro automates this process by continuously monitoring listings, filtering irrelevant results, and alerting only when a real opportunity appears.
-
-This allows users to act faster and gain an advantage in competitive marketplaces.
+**Desarrollado por:** José Carlos Lobo  
+**Stack Principal:** Python | Playwright (Browser Automation) | BeautifulSoup | Telegram Bot API | JSON  
 
 ---
 
-## 🚀 Overview
+## 🎯 ¿Qué es DealSniper Pro? (Perspectiva de Negocio)
 
-DealSniper Pro is a Python-based automation system designed to monitor online marketplaces and identify valuable opportunities based on price.
+En mercados altamente competitivos (desde el e-commerce y el *reselling* hasta el sector inmobiliario o la compraventa de activos), la información oportuna lo es todo. Revisar plataformas de anuncios o marketplaces manualmente para encontrar oportunidades de negocio, subastas o productos por debajo de su precio de mercado es una tarea ineficiente, propensa a errores y que consume cientos de horas hombre. El coste de oportunidad de llegar tarde a una oferta suele significar perder el negocio.
 
-Instead of manually browsing listings, the system continuously scans new items, filters irrelevant results, and alerts you only when a potential deal appears.
+**DealSniper Pro** es un sistema de automatización e inteligencia competitiva desarrollado en Python. Su función es **automatizar por completo la vigilancia del mercado**: rastrea plataformas de forma continua utilizando técnicas avanzadas de navegación robótica, extrae la información, filtra el ruido innecesario mediante lógica de negocio y, si detecta una desviación de precio atractiva, envía una alerta instantánea a los canales de toma de decisiones (Telegram).
 
----
-
-## ⚡ Features
-
-* 🔎 Real-time product monitoring
-* 🤖 Anti-bot scraping using Playwright (browser automation)
-* 🧠 Smart filtering (removes irrelevant items like accessories)
-* 💰 Price-based deal detection
-* 🔁 Duplicate prevention system
-* 📩 Telegram alert integration
-* ⚙️ Modular and scalable architecture
+### 🏢 Casos de Uso Aplicables a Empresas y Profesionales:
+* **Monitoreo de Competencia:** Vigilancia de precios de competidores en tiempo real para ajustar estrategias de pricing dinámico.
+* **Captación de Leads y Activos:** Rastreo automático de portales sectoriales para detectar ofertas inmobiliarias, vehículos o maquinaria por debajo de su valor promedio.
+* **Inteligencia de Producto:** Alertas tempranas sobre la aparición de inventario crítico o descatalogado en el mercado secundario.
 
 ---
 
-## 📸 Example Alert (Telegram)
+## 🚀 Características Clave y Valor Empresarial
 
-```
-🔥 CHOLLO
-🔎 Fender Jazz Bass
-📌 Fender Jazz Bass Mexico
-💰 450 €
-🔗 https://...
-```
+* **Extracción Avanzada y Anti-Bot (Scraping de Nivel Industrial):** Integra **Playwright** para emular el comportamiento humano en navegadores (Headless Browser). Esto permite saltar las barreras de protección de los marketplaces modernos y asegurar la continuidad del rastreo sin bloqueos.
+* **Filtrado Inteligente de Datos (Ruido Cero):** Cuenta con un motor de reglas de negocio que limpia los datos extraídos, eliminando listados irrelevantes o accesorios no deseados para enviar alertas únicamente cuando existe una oportunidad real.
+* **Prevención de Duplicados (Eficiencia Operativa):** Un sistema de persistencia en caché evita el reprocesamiento y el envío duplicado de alertas, optimizando el uso de recursos y el tiempo del equipo de análisis.
+* **Canal de Alertas Instantáneas:** Integración nativa con la API de bots de **Telegram**, entregando la información estructurada (`Producto`, `Precio`, `Enlace Directo`) en el móvil del tomador de decisiones en menos de 3 segundos desde su publicación.
 
 ---
 
-## ⚙️ How It Works
+## 🛠️ Arquitectura Técnica y Estructura del Proyecto
 
-1. Performs automated searches on marketplaces
-2. Extracts product data using a headless browser
-3. Cleans and structures the data
-4. Filters out irrelevant items
-5. Detects deals based on price thresholds
-6. Sends real-time alerts via Telegram
+Diseñado bajo una arquitectura modular y escalable que facilita la integración de nuevos marketplaces o reglas de filtrado sin alterar el núcleo del sistema:
 
----
-
-## 🧰 Tech Stack
-
-* Python
-* Playwright
-* BeautifulSoup
-* Requests / HTTPX
-* Telegram Bot API
-* JSON (data persistence)
-
----
-
-## 📂 Project Structure
-
-```
 deal_sniper/
 │
 ├── app/
-│   ├── main.py
-│   ├── scraper/
-│   ├── parser/
-│   ├── services/
-│   ├── storage/
-│   ├── utils/
-│   └── config/
+│   ├── main.py       # Punto de entrada y orquestador del servicio de monitoreo
+│   ├── scraper/      # Módulo de automatización de navegador (Playwright Engine)
+│   ├── parser/       # Extracción y estructuración de datos crudos (BeautifulSoup)
+│   ├── services/     # Lógica de detección de desviaciones de precio y alertas
+│   ├── storage/      # Sistema de caché local para prevención de duplicados (JSON)
+│   ├── utils/        # Herramientas de soporte y formateo de datos
+│   └── config/       # Gestión segura de credenciales y variables de entorno
 │
-├── data/
-├── requirements.txt
+├── data/             # Historial de registros procesados
+├── requirements.txt  # Dependencias del sistema
 └── README.md
-```
+
 
 ---
 
-## ▶️ Installation
+## 📋 Guía de Instalación y Configuración
 
+### Requisitos Previos
+* Python 3.10+
+* Cuenta de Telegram para la recepción de alertas
+
+### 1. Clonar e Instalar Dependencias
 ```bash
+git clone [https://github.com/JCarlosWolf/deal-sniper-pro.git](https://github.com/JCarlosWolf/deal-sniper-pro.git)
+cd deal-sniper-pro
+python -m venv .venv
+Activar entorno virtual:
+
+Windows: .venv\Scripts\activate
+
+Linux/macOS: source .venv/bin/activate
+
+Bash
 pip install -r requirements.txt
-```
+# Instalar los navegadores necesarios para Playwright
+playwright install
+2. Configuración de Credenciales (.env)
+Crea un archivo .env en la raíz del proyecto para conectar el sistema con tu canal de alertas:
 
----
-
-## 🔐 Configuration
-
-Create a `.env` file in the root directory:
-
-```
-TELEGRAM_TOKEN=your_token_here
-CHAT_ID=your_chat_id_here
-```
-
----
-
-## ▶️ Run
-
-```bash
+Fragmento de código
+TELEGRAM_TOKEN=tu_token_de_bot_aqui
+CHAT_ID=tu_chat_id_de_telegram_aqui
+3. Ejecutar el Monitorizador
+Bash
 python -m app.main
-```
+📸 Formato de Alerta Automatizada (Visualización de Datos)
+El sistema entrega la información lista para la acción comercial:
 
----
+Plaintext
+🔥 OPORTUNIDAD DETECTADA
+🔎 Producto: Fender Jazz Bass Mexico
+💰 Precio Objetivo: 450 €
+🔗 Enlace Directo: [https://marketplace-url.com/item/12345](https://marketplace-url.com/item/12345)
+✉️ Contacto y Consultoría de Automatización
+Si tu empresa pierde horas vigilando portales web, necesitas extraer datos masivos de la competencia de manera ética y segura, o buscas automatizar flujos que conecten la web con tus herramientas de comunicación:
 
-## 🎯 Use Cases
+Desarrollador: José Carlos Lobo
 
-* 💰 Detect underpriced products for reselling
-* ⚡ Monitor marketplaces without manual effort
-* 📊 Track new listings in real time
-* 🤖 Automate repetitive search workflows
-* 🛠️ Build custom monitoring tools for clients
+Especialidad: Automatización de Procesos, Extracción de Datos (Web Scraping) y Arquitecturas Backend con Python.
 
----
+LinkedIn: www.linkedin.com/in/josé-carlos-lobo-473b458a
 
-## 🚀 Future Improvements
-
-* Multi-marketplace support
-* Async scraping
-* Price history tracking
-* Advanced deal scoring system
-* Deployment on VPS / Docker
-
----
-
-## 📌 Notes
-
-This project is designed as a practical automation system and can be adapted to different industries and use cases.
-
----
-
-## 👤 Author
-
-Developed as a real-world automation project focused on marketplace monitoring and opportunity detection.
+Automated marketplace monitoring system that detects underpriced opportunities in real time and sends instant structured alerts.
